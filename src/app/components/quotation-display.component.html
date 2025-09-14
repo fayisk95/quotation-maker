@@ -29,6 +29,11 @@
     <div class="a4-container" id="quotation-document">
         <!-- Page 1 -->
         <div class="a4-page">
+            <!-- Page Header with Logo -->
+            <div class="page-header">
+                <img src="assets/logo.jpeg" alt="BrandnBytes Logo" class="header-logo">
+            </div>
+
             <!-- Header -->
             <div class="quotation-header">
                 <h1 class="main-title">Project Quotation</h1>
@@ -42,6 +47,10 @@
                         <div class="info-row">
                             <span class="label">Date:</span>
                             <span class="value">{{ quotation.date | date:'MMMM d, yyyy' }}</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="label">Vendor:</span>
+                            <span class="value">{{ quotation.vendorInfo.companyName }}</span>
                         </div>
                     </div>
                 </div>
@@ -64,6 +73,11 @@
 
         <!-- Page 2 -->
         <div class="a4-page">
+            <!-- Page Header with Logo -->
+            <div class="page-header">
+                <img src="assets/logo.jpeg" alt="BrandnBytes Logo" class="header-logo">
+            </div>
+
             <div class="subsection">
                 <h4 class="subsection-title">Technology Stack</h4>
                 <div class="tech-stack">
@@ -109,6 +123,18 @@
                 </div>
             </section>
 
+
+
+        </div>
+
+        <!-- Page 3 -->
+        <div class="a4-page">
+            <!-- Page Header with Logo -->
+            <div class="page-header">
+                <img src="assets/logo.jpeg" alt="BrandnBytes Logo" class="header-logo">
+            </div>
+
+            <!-- Payment Terms -->
             <section class="subsection">
                 <h3 class="section-title">💳 Payment Terms</h3>
                 <div class="payment-terms">
@@ -118,13 +144,6 @@
                     </div>
                 </div>
             </section>
-
-        </div>
-
-        <!-- Page 3 -->
-        <div class="a4-page">
-            <!-- Payment Terms -->
-
             <!-- Exclusions -->
             <section class="section">
                 <h3 class="section-title">❌ Exclusions</h3>
@@ -166,7 +185,131 @@
             <div class="document-footer">
                 <div class="footer-line"></div>
                 <div class="footer-text">
-                    Professional Project Quotation • Generated on {{ quotation.date | date:'MMMM d, yyyy' }}
+                    {{ quotation.vendorInfo.companyName }} • Professional Project Quotation • Generated on {{
+                    quotation.date | date:'MMMM d, yyyy' }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Page 4 - Signatures -->
+        <div class="a4-page">
+            <!-- Page Header with Logo -->
+            <div class="page-header">
+                <img src="assets/logo.jpeg" alt="BrandnBytes Logo" class="header-logo">
+            </div>
+
+            <div class="signature-page">
+                <h2 class="signature-title">Agreement & Signatures</h2>
+
+                <!-- Terms Agreement -->
+                <section class="agreement-section">
+                    <h3 class="agreement-title">Terms of Agreement</h3>
+                    <div class="agreement-text">
+                        <p>By signing below, both parties agree to the terms and conditions outlined in this quotation:
+                        </p>
+                        <div class="agreement-points">
+                            • Scope of work, timeline, and costs as specified • Payment terms and schedule as
+                            outlined<br>
+                            • Project deliverables and milestones • AMC terms (if applicable) • All exclusions mentioned
+                        </div>
+                        <div class="validity-notice">
+                            <strong>Valid for {{ quotation.validityDays }} days from issue date.</strong>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Vendor Information -->
+                <section class="vendor-info-section">
+                    <h3 class="info-section-title">Vendor Details</h3>
+                    <div class="vendor-details">
+                        <div class="vendor-grid">
+                            <div><strong>Company:</strong> {{ quotation.vendorInfo.companyName }}</div>
+                            <div><strong>Contact:</strong> {{ quotation.vendorInfo.contactPerson }}</div>
+                            <div><strong>Email:</strong> {{ quotation.vendorInfo.email }}</div>
+                            <div><strong>Phone:</strong> {{ quotation.vendorInfo.phone }}</div>
+                        </div>
+                        <div class="vendor-address"><strong>Address:</strong> {{ quotation.vendorInfo.address }}</div>
+                    </div>
+                </section>
+
+                <!-- Signature Blocks -->
+                <div class="signatures-container">
+                    <!-- Client Signature -->
+                    <div class="signature-block">
+                        <h4 class="signature-block-title">Client Acceptance</h4>
+                        <div class="signature-content">
+                            <div class="signature-line">
+                                <div class="signature-area">
+                                    <div class="signature-placeholder">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="signature-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Name:</span>
+                                    <div class="detail-line">
+
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Title:</span>
+                                    <div class="detail-line">
+
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Date:</span>
+                                    <div class="detail-line">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vendor Signature -->
+                    <div class="signature-block">
+                        <h4 class="signature-block-title">Vendor Confirmation</h4>
+                        <div class="signature-content">
+                            <div class="signature-line">
+                                <div class="signature-area">
+                                    <div class="signature-placeholder">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="signature-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Name:</span>
+                                    <div class="detail-line">{{ quotation.signatures.vendorSignature?.name }}
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Title:</span>
+                                    <div class="detail-line">
+                                        {{ quotation.signatures.vendorSignature?.title }}
+                                    </div>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Date:</span>
+                                    <div class="detail-line">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer with Logo -->
+                <div class="signature-footer">
+                    <div class="footer-logo">
+                        <img src="assets/logo.jpeg" alt="BrandnBytes Logo" class="footer-logo-image">
+                    </div>
+                    <div class="footer-text">
+                        Thank you for choosing {{ quotation.vendorInfo.companyName }} for your project needs.
+                    </div>
                 </div>
             </div>
         </div>

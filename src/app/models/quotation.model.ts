@@ -34,4 +34,25 @@ export interface Quotation {
   totalCost: number;
   totalWithOptional: number;
   currency: string;
+  vendorInfo: {
+    companyName: string;
+    contactPerson: string;
+    email: string;
+    phone: string;
+    address: string;
+  };
+  signatures: {
+    clientSignature?: {
+      name: string;
+      title: string;
+      date: Date;
+      signed: boolean;
+    };
+    vendorSignature?: {
+      name: string;
+      title: string;
+      date: Date;
+      signed: boolean;
+    };
+  };
 }

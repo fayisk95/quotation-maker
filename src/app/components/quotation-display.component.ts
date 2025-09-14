@@ -113,9 +113,23 @@ import jsPDF from 'jspdf';
     /* Header Styles */
     .quotation-header {
       text-align: center;
-      margin-bottom: 30mm;
+      margin-bottom: 20mm;
       padding-bottom: 10mm;
       border-bottom: 3px solid #1e40af;
+    }
+
+    /* Page Header with Logo */
+    .page-header {
+      text-align: center;
+      margin-bottom: 8mm;
+      padding-bottom: 4mm;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .header-logo {
+      max-height: 12mm;
+      max-width: 60mm;
+      object-fit: contain;
     }
 
     .main-title {
@@ -391,6 +405,184 @@ import jsPDF from 'jspdf';
       color: #6b7280;
     }
 
+    /* Signature Page Styles */
+    .signature-page {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .signature-title {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #1e40af;
+      text-align: center;
+      margin-bottom: 8mm;
+      padding-bottom: 3mm;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .agreement-section {
+      margin-bottom: 6mm;
+    }
+
+    .agreement-title {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 3mm;
+    }
+
+    .agreement-text {
+      font-size: 10pt;
+      line-height: 1.5;
+      color: #1f2937;
+    }
+
+    .agreement-points {
+      margin: 3mm 0;
+      padding: 3mm;
+      background: #f8fafc;
+      border-radius: 3mm;
+      line-height: 1.4;
+    }
+
+    .validity-notice {
+      background: #fef3c7;
+      padding: 3mm;
+      border-radius: 3mm;
+      border-left: 2mm solid #f59e0b;
+      margin-top: 3mm;
+      font-size: 10pt;
+    }
+
+    .vendor-info-section {
+      margin-bottom: 8mm;
+    }
+
+    .info-section-title {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 3mm;
+      padding-bottom: 1mm;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .vendor-details {
+      background: #f8fafc;
+      padding: 4mm;
+      border-radius: 3mm;
+      border: 1px solid #e2e8f0;
+    }
+
+    .vendor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2mm;
+      font-size: 10pt;
+      margin-bottom: 2mm;
+    }
+
+    .vendor-address {
+      font-size: 10pt;
+      grid-column: 1 / -1;
+    }
+
+    .signatures-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      margin-bottom: 8mm;
+    }
+
+    .signature-block {
+      border: 2px solid #e5e7eb;
+      border-radius: 4mm;
+      padding: 5mm;
+      background: #fafafa;
+    }
+
+    .signature-block-title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #1e40af;
+      margin-bottom: 4mm;
+      text-align: center;
+      padding-bottom: 2mm;
+      border-bottom: 1px solid #d1d5db;
+    }
+
+    .signature-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+    }
+
+    .signature-line {
+      text-align: center;
+    }
+
+    .signature-area {
+      height: 20mm;
+      border: 2px dashed #9ca3af;
+      border-radius: 3mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+    }
+
+    .signature-placeholder {
+      color: #6b7280;
+      font-size: 12pt;
+      font-style: italic;
+    }
+
+    .signature-details {
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+    }
+
+    .detail-row {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+      font-size: 10pt;
+    }
+
+    .detail-label {
+      font-weight: 600;
+      color: #374151;
+      min-width: 12mm;
+    }
+
+    .detail-line {
+      flex: 1;
+      border-bottom: 1px solid #9ca3af;
+      padding-bottom: 2mm;
+      min-height: 4mm;
+      color: #1f2937;
+    }
+
+    .signature-footer {
+      margin-top: auto;
+      text-align: center;
+      padding-top: 6mm;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-logo {
+      margin-bottom: 2mm;
+    }
+
+    .footer-logo-image {
+      max-height: 8mm;
+      max-width: 40mm;
+      object-fit: contain;
+    }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .quotation-wrapper {
@@ -422,6 +614,17 @@ import jsPDF from 'jspdf';
 
       .tech-stack {
         grid-template-columns: 1fr;
+      }
+
+      .signatures-container {
+        grid-template-columns: 1fr;
+        gap: 6mm;
+      }
+
+      .logo-image,
+      .footer-logo-image {
+        max-height: 12mm;
+        max-width: 50mm;
       }
     }
 

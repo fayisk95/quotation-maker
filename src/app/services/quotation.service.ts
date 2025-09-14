@@ -90,7 +90,22 @@ export class QuotationService {
       validityDays: 15,
       totalCost: 4200,
       totalWithOptional: 4200,
-      currency: 'AED'
+      currency: 'AED',
+      vendorInfo: {
+        companyName: 'BrandnBytes',
+        contactPerson: 'Project Manager',
+        email: 'info@brandnbytes.com',
+        phone: '+971-504099587',
+        address: 'Abu Dhabi, UAE'
+      },
+      signatures: {
+        vendorSignature: {
+          name: 'Fayis Rahman',
+          title: 'Project Manager - BrandnBytes',
+          date: new Date(),
+          signed: false
+        }
+      }
     };
 
     this.quotationsSubject.next([sampleQuotation]);
